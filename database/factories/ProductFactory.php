@@ -13,6 +13,7 @@ $factory->define(Product::class, function (Faker $faker) {
             return Category::all()->random();
         },
         'name'=>$faker->word,
+        'slug'=>$faker->slug,
         'short_description'=>$faker->paragraph,
         'long_description'=>$faker->paragraph,
         'price'=>$faker->numberBetween(10,500),

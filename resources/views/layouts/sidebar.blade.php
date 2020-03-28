@@ -111,10 +111,8 @@
             <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{route('category.index') }}">List </a>
             <a class="collapse-item" href="{{route('category.create') }}">Create </a>
-            <a class="collapse-item" href="{{route('category.index') }}">Edit </a>
 
-
-          </div>
+        </div>
 
 
 
@@ -129,7 +127,9 @@
 
             {{--  Custom pages  --}}
             <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{route('category.index') }}">Category </a>
+            <a class="collapse-item" href="{{route('product.index') }}">List</a>
+            <a class="collapse-item" href="{{route('product.create') }}">Create </a>
+
           </div>
 
 

@@ -63,6 +63,10 @@
   <script src="{{ asset('admin/ajax.js') }}"></script>
   {{--  toastr Notification  --}}
   <script src="{{ asset('admin/toastr-notification/toastr.min.js') }}"></script>
+  {{--  Upload Image  --}}
+  <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+  <script src="{{ asset('admin/upload-img.js') }}"></script>
+
 </body>
 
 </html>

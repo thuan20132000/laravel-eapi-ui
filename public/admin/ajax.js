@@ -2,8 +2,10 @@
 
 $('document').ready(function(){
 
-    $('.edit').on('click',function(){
-        let $id = $(this).data('id');
+    $('.edit').click(function(){
+
+
+        var $id = $(this).data('id');
 
         $.ajax({
             method: "GET",
@@ -11,7 +13,6 @@ $('document').ready(function(){
             success:function($result){
                 $('.name').val($result.name);
                 $('.description').val($result.description);
-                console.log($result.status);
                 if($result.status === 1){
                     $('#status-1').attr('checked',true);
                 }else{
@@ -24,9 +25,11 @@ $('document').ready(function(){
         });
 
         $('.update').on('click',function(){
+
             let $name = $('.name').val();
             var $status = $('input[name=status]:checked').val();
             let $description = $('.description').val();
+
 
             $.ajaxSetup({
                 headers: {
@@ -35,7 +38,7 @@ $('document').ready(function(){
             });
 
             $.ajax({
-                method: "PUT",
+                method: "PATCH",
                 url: 'category/' + $id,
                 data:{
                     'id':$id,
@@ -44,13 +47,14 @@ $('document').ready(function(){
                     'status':$status
                 },
                 success:function($result){
+                    $id = null;
                     if($result.errors){
                         toastr.error('Error',$result.errors.name,{timeout:6000})
                         $('.name').addClass('is-invalid ');
                     }else{
                         toastr.success('Success',"Updated successfully",{timeout:5000})
                         setTimeout(function(){
-                            location.reload();
+                            // location.reload();
                         },2500);
 
                     }
@@ -90,8 +94,5 @@ $('document').ready(function(){
             })
     });
 
+});
 
-
-
-
-})

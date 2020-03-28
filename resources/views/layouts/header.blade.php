@@ -21,7 +21,10 @@
 
   {{--  Custom toastr notification  --}}
   <link rel="stylesheet" href="{{ asset('admin/toastr-notification/toastr.min.css') }}">
+    {{--  Upload Image Css  --}}
+  <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="{{ asset('admin/styles.css') }}">
 
 </head>
 
